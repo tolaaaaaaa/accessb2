@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   const widget = document.getElementById('accessibility-widget');
   const menu = document.getElementById('accessibility-menu');
   const openMenuBtn = document.getElementById('open-menu');
@@ -8,115 +8,150 @@
   const titleColors = document.getElementById('title-colors');
   const backgroundColors = document.getElementById('background-colors');
 
-  openMenuBtn.addEventListener('click', function() {
-    menu.classList.add('visible');
-  });
-
-  closeMenuBtn.addEventListener('click', function() {
-    menu.classList.remove('visible');
-  });
-
-  declarationBtn.addEventListener('click', function() {
-    alert('Accessibility Declaration');
-  });
-
-  // Function to mute sounds
-  document.getElementById('mute-sounds').addEventListener('click', function() {
-    document.querySelectorAll('audio, video').forEach(media => {
-      media.muted = true;
+  if (openMenuBtn) {
+    openMenuBtn.addEventListener('click', function() {
+      menu.classList.add('visible');
     });
-  });
+  }
 
-  // Function to hide images
-  document.getElementById('hide-images').addEventListener('click', function() {
-    document.querySelectorAll('img').forEach(img => {
-      img.style.display = 'none';
+  if (closeMenuBtn) {
+    closeMenuBtn.addEventListener('click', function() {
+      menu.classList.remove('visible');
     });
-  });
+  }
 
-  // Function for read mode (focus on text)
-  document.getElementById('read-mode').addEventListener('click', function() {
-    document.body.style.backgroundColor = '#f4f4f4';
-    document.body.style.color = '#000';
-  });
+  if (declarationBtn) {
+    declarationBtn.addEventListener('click', function() {
+      alert('Accessibility Declaration');
+    });
+  }
 
-  // Function to stop animations
-  document.getElementById('stop-animations').addEventListener('click', function() {
-    const style = document.createElement('style');
-    style.innerHTML = `* { 
-      animation: none !important; 
-      transition: none !important;
-    }`;
-    document.head.appendChild(style);
-  });
+  const muteSoundsBtn = document.getElementById('mute-sounds');
+  if (muteSoundsBtn) {
+    muteSoundsBtn.addEventListener('click', function() {
+      document.querySelectorAll('audio, video').forEach(media => {
+        media.muted = true;
+      });
+    });
+  }
 
-  // Function for reading mask
-  document.getElementById('reading-mask').addEventListener('click', function() {
-    alert('Reading mask activated');
-  });
+  const hideImagesBtn = document.getElementById('hide-images');
+  if (hideImagesBtn) {
+    hideImagesBtn.addEventListener('click', function() {
+      document.querySelectorAll('img').forEach(img => {
+        img.style.display = 'none';
+      });
+    });
+  }
 
-  // Function to highlight hover
-  document.getElementById('highlight-hover').addEventListener('click', function() {
-    const style = document.createElement('style');
-    style.innerHTML = `*:hover { 
-      background-color: yellow !important;
-    }`;
-    document.head.appendChild(style);
-  });
+  const readModeBtn = document.getElementById('read-mode');
+  if (readModeBtn) {
+    readModeBtn.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#f4f4f4';
+      document.body.style.color = '#000';
+    });
+  }
 
-  // Function to highlight focus
-  document.getElementById('highlight-focus').addEventListener('click', function() {
-    const style = document.createElement('style');
-    style.innerHTML = `*:focus { 
-      outline: 3px solid yellow !important;
-    }`;
-    document.head.appendChild(style);
-  });
+  const stopAnimationsBtn = document.getElementById('stop-animations');
+  if (stopAnimationsBtn) {
+    stopAnimationsBtn.addEventListener('click', function() {
+      const style = document.createElement('style');
+      style.innerHTML = `* { 
+        animation: none !important; 
+        transition: none !important;
+      }`;
+      document.head.appendChild(style);
+    });
+  }
 
-  // Function for big black cursor
-  document.getElementById('big-black-cursor').addEventListener('click', function() {
-    document.body.style.cursor = 'url(bigblackcursor.png), auto';
-  });
+  const readingMaskBtn = document.getElementById('reading-mask');
+  if (readingMaskBtn) {
+    readingMaskBtn.addEventListener('click', function() {
+      alert('Reading mask activated');
+    });
+  }
 
-  // Function for big white cursor
-  document.getElementById('big-white-cursor').addEventListener('click', function() {
-    document.body.style.cursor = 'url(bigwhitecursor.png), auto';
-  });
+  const highlightHoverBtn = document.getElementById('highlight-hover');
+  if (highlightHoverBtn) {
+    highlightHoverBtn.addEventListener('click', function() {
+      const style = document.createElement('style');
+      style.innerHTML = `*:hover { 
+        background-color: yellow !important;
+      }`;
+      document.head.appendChild(style);
+    });
+  }
 
-  // Function for dark contrast
-  document.getElementById('dark-contrast').addEventListener('click', function() {
-    document.body.style.backgroundColor = '#000';
-    document.body.style.color = '#fff';
-  });
+  const highlightFocusBtn = document.getElementById('highlight-focus');
+  if (highlightFocusBtn) {
+    highlightFocusBtn.addEventListener('click', function() {
+      const style = document.createElement('style');
+      style.innerHTML = `*:focus { 
+        outline: 3px solid yellow !important;
+      }`;
+      document.head.appendChild(style);
+    });
+  }
 
-  // Function for light contrast
-  document.getElementById('light-contrast').addEventListener('click', function() {
-    document.body.style.backgroundColor = '#fff';
-    document.body.style.color = '#000';
-  });
+  const bigBlackCursorBtn = document.getElementById('big-black-cursor');
+  if (bigBlackCursorBtn) {
+    bigBlackCursorBtn.addEventListener('click', function() {
+      document.body.style.cursor = 'url(bigblackcursor.png), auto';
+    });
+  }
 
-  // Function for high contrast
-  document.getElementById('high-contrast').addEventListener('click', function() {
-    document.body.style.backgroundColor = '#000';
-    document.body.style.color = '#ffff00';
-  });
+  const bigWhiteCursorBtn = document.getElementById('big-white-cursor');
+  if (bigWhiteCursorBtn) {
+    bigWhiteCursorBtn.addEventListener('click', function() {
+      document.body.style.cursor = 'url(bigwhitecursor.png), auto';
+    });
+  }
 
-  // Function for high saturation
-  document.getElementById('high-saturation').addEventListener('click', function() {
-    document.body.style.filter = 'saturate(2)';
-  });
+  const darkContrastBtn = document.getElementById('dark-contrast');
+  if (darkContrastBtn) {
+    darkContrastBtn.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#000';
+      document.body.style.color = '#fff';
+    });
+  }
 
-  // Function for monochrome
-  document.getElementById('monochrome').addEventListener('click', function() {
-    document.body.style.filter = 'grayscale(100%)';
-  });
+  const lightContrastBtn = document.getElementById('light-contrast');
+  if (lightContrastBtn) {
+    lightContrastBtn.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#fff';
+      document.body.style.color = '#000';
+    });
+  }
 
-  // Function for low saturation
-  document.getElementById('low-saturation').addEventListener('click', function() {
-    document.body.style.filter = 'saturate(0.5)';
-  });
+  const highContrastBtn = document.getElementById('high-contrast');
+  if (highContrastBtn) {
+    highContrastBtn.addEventListener('click', function() {
+      document.body.style.backgroundColor = '#000';
+      document.body.style.color = '#ffff00';
+    });
+  }
 
-  // Function to adjust text colors
+  const highSaturationBtn = document.getElementById('high-saturation');
+  if (highSaturationBtn) {
+    highSaturationBtn.addEventListener('click', function() {
+      document.body.style.filter = 'saturate(2)';
+    });
+  }
+
+  const monochromeBtn = document.getElementById('monochrome');
+  if (monochromeBtn) {
+    monochromeBtn.addEventListener('click', function() {
+      document.body.style.filter = 'grayscale(100%)';
+    });
+  }
+
+  const lowSaturationBtn = document.getElementById('low-saturation');
+  if (lowSaturationBtn) {
+    lowSaturationBtn.addEventListener('click', function() {
+      document.body.style.filter = 'saturate(0.5)';
+    });
+  }
+
   function createColorOptions(container, colors, target, property) {
     colors.forEach(color => {
       const button = document.createElement('button');
@@ -131,81 +166,104 @@
   }
 
   const colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'];
-  createColorOptions(textColors, colors, 'body', 'color');
-  createColorOptions(titleColors, colors, 'h1, h2, h3, h4, h5, h6', 'color');
-  createColorOptions(backgroundColors, colors, 'body', 'backgroundColor');
+  if (textColors) createColorOptions(textColors, colors, 'body', 'color');
+  if (titleColors) createColorOptions(titleColors, colors, 'h1, h2, h3, h4, h5, h6', 'color');
+  if (backgroundColors) createColorOptions(backgroundColors, colors, 'body', 'backgroundColor');
 
-  // Function for content scaling
-  document.getElementById('content-scaling').addEventListener('click', function() {
-    document.body.style.transform = 'scale(1.2)';
-  });
-
-  // Function for readable font
-  document.getElementById('readable-font').addEventListener('click', function() {
-    document.body.style.fontFamily = 'Arial, sans-serif';
-  });
-
-  // Function to highlight titles
-  document.getElementById('highlight-titles').addEventListener('click', function() {
-    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(title => {
-      title.style.backgroundColor = 'yellow';
+  const contentScalingBtn = document.getElementById('content-scaling');
+  if (contentScalingBtn) {
+    contentScalingBtn.addEventListener('click', function() {
+      document.body.style.transform = 'scale(1.2)';
     });
-  });
+  }
 
-  // Function to highlight links
-  document.getElementById('highlight-links').addEventListener('click', function() {
-    document.querySelectorAll('a').forEach(link => {
-      link.style.backgroundColor = 'yellow';
+  const readableFontBtn = document.getElementById('readable-font');
+  if (readableFontBtn) {
+    readableFontBtn.addEventListener('click', function() {
+      document.body.style.fontFamily = 'Arial, sans-serif';
     });
-  });
+  }
 
-  // Function for text magnifier
-  document.getElementById('text-magnifier').addEventListener('click', function() {
-    document.body.style.zoom = '150%';
-  });
-
-  // Function to adjust font sizing
-  document.getElementById('adjust-font-sizing').addEventListener('click', function() {
-    document.body.style.fontSize = 'larger';
-  });
-
-  // Function to align center
-  document.getElementById('align-center').addEventListener('click', function() {
-    document.body.style.textAlign = 'center';
-  });
-
-  // Function to adjust line height
-  document.getElementById('adjust-line-height').addEventListener('click', function() {
-    document.body.style.lineHeight = '2';
-  });
-
-  // Function to align left
-  document.getElementById('align-left').addEventListener('click', function() {
-    document.body.style.textAlign = 'left';
-  });
-
-  // Function to adjust letter spacing
-  document.getElementById('adjust-letter-spacing').addEventListener('click', function() {
-    document.body.style.letterSpacing = '2px';
-  });
-
-  // Function to align right
-  document.getElementById('align-right').addEventListener('click', function() {
-    document.body.style.textAlign = 'right';
-  });
-
-  // Reset to default
-  document.getElementById('reset-default').addEventListener('click', function() {
-    console.log('Resetting to default...');
-    document.body.classList.add('default-styles');
-    document.querySelectorAll('img').forEach(img => {
-      img.style.display = '';
-      console.log('Image display reset:', img.style.display);
+  const highlightTitlesBtn = document.getElementById('highlight-titles');
+  if (highlightTitlesBtn) {
+    highlightTitlesBtn.addEventListener('click', function() {
+      document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(title => {
+        title.style.backgroundColor = 'yellow';
+      });
     });
-    document.querySelectorAll('audio, video').forEach(media => {
-      media.muted = false;
-      console.log('Media muted reset:', media.muted);
-    });
-  });
+  }
 
-})();
+  const highlightLinksBtn = document.getElementById('highlight-links');
+  if (highlightLinksBtn) {
+    highlightLinksBtn.addEventListener('click', function() {
+      document.querySelectorAll('a').forEach(link => {
+        link.style.backgroundColor = 'yellow';
+      });
+    });
+  }
+
+  const textMagnifierBtn = document.getElementById('text-magnifier');
+  if (textMagnifierBtn) {
+    textMagnifierBtn.addEventListener('click', function() {
+      document.body.style.zoom = '150%';
+    });
+  }
+
+  const adjustFontSizingBtn = document.getElementById('adjust-font-sizing');
+  if (adjustFontSizingBtn) {
+    adjustFontSizingBtn.addEventListener('click', function() {
+      document.body.style.fontSize = 'larger';
+    });
+  }
+
+  const alignCenterBtn = document.getElementById('align-center');
+  if (alignCenterBtn) {
+    alignCenterBtn.addEventListener('click', function() {
+      document.body.style.textAlign = 'center';
+    });
+  }
+
+  const adjustLineHeightBtn = document.getElementById('adjust-line-height');
+  if (adjustLineHeightBtn) {
+    adjustLineHeightBtn.addEventListener('click', function() {
+      document.body.style.lineHeight = '2';
+    });
+  }
+
+  const alignLeftBtn = document.getElementById('align-left');
+  if (alignLeftBtn) {
+    alignLeftBtn.addEventListener('click', function() {
+      document.body.style.textAlign = 'left';
+    });
+  }
+
+  const adjustLetterSpacingBtn = document.getElementById('adjust-letter-spacing');
+  if (adjustLetterSpacingBtn) {
+    adjustLetterSpacingBtn.addEventListener('click', function() {
+      document.body.style.letterSpacing = '2px';
+    });
+  }
+
+  const alignRightBtn = document.getElementById('align-right');
+  if (alignRightBtn) {
+    alignRightBtn.addEventListener('click', function() {
+      document.body.style.textAlign = 'right';
+    });
+  }
+
+  const resetDefaultBtn = document.getElementById('reset-default');
+  if (resetDefaultBtn) {
+    resetDefaultBtn.addEventListener('click', function() {
+      console.log('Resetting to default...');
+      document.body.classList.add('default-styles');
+      document.querySelectorAll('img').forEach(img => {
+        img.style.display = '';
+        console.log('Image display reset:', img.style.display);
+      });
+      document.querySelectorAll('audio, video').forEach(media => {
+        media.muted = false;
+        console.log('Media muted reset:', media.muted);
+      });
+    });
+  }
+});
