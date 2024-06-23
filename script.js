@@ -75,12 +75,12 @@
 
   // Function for big black cursor
   document.getElementById('big-black-cursor').addEventListener('click', function() {
-    document.body.style.cursor = 'url(big-black-cursor.png), auto';
+    document.body.style.cursor = 'url(bigblackcursor.png), auto';
   });
 
   // Function for big white cursor
   document.getElementById('big-white-cursor').addEventListener('click', function() {
-    document.body.style.cursor = 'url(big-white-cursor.png), auto';
+    document.body.style.cursor = 'url(bigwhitecursor.png), auto';
   });
 
   // Function for dark contrast
