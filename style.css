@@ -1,0 +1,138 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#accessibility-widget {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+.text-center{
+  text-align: center;
+}
+
+#accessibility-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items from the start */
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-height: 80vh; /* Adjust this value as necessary */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+#accessibility-menu.visible {
+  display: flex;
+}
+
+#accessibility-menu h1 {
+  font-size: 20px;
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+#accessibility-menu h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.firstrow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.firstrow button {
+  flex: 1;
+  margin: 5px;
+}
+
+.adjustment-section {
+  margin-bottom: 10px; /* Reduced margin */
+}
+
+.adjustment-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.adjust-button{
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  background-color: #F2F7FA;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.adjust-button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.color-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.color-options button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.shadow-effect {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.shadow-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+#open-menu img {
+  width: 50px;
+  height: 50px;
+}
+#open-menu{
+  border: none;
+}
+
+#close-menu {
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+body.default-styles {
+  font-size: initial;
+  color: initial;
+  background-color: initial;
+  filter: initial;
+  cursor: initial;
+  zoom: initial;
+  transform: initial;
+  font-family: initial;
+  text-align: initial;
+  line-height: initial;
+  letter-spacing: initial;
+}
+
+/* Highlight Hover Styles */
+.highlight-hover *:hover {
+  background-color: yellow !important;
+}
