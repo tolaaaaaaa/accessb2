@@ -1,4 +1,5 @@
-console.log("Accessbility Script is running");
+console.log('Accessibility Script is running');
+
 document.addEventListener('DOMContentLoaded', function() {
   const widget = document.getElementById('accessibility-widget');
   const menu = document.getElementById('accessibility-menu');
@@ -9,21 +10,26 @@ document.addEventListener('DOMContentLoaded', function() {
   const titleColors = document.getElementById('title-colors');
   const backgroundColors = document.getElementById('background-colors');
 
+  console.log({ widget, menu, openMenuBtn, closeMenuBtn, declarationBtn, textColors, titleColors, backgroundColors });
+
   if (openMenuBtn) {
     openMenuBtn.addEventListener('click', function() {
       menu.classList.add('visible');
+      console.log('Menu opened');
     });
   }
 
   if (closeMenuBtn) {
     closeMenuBtn.addEventListener('click', function() {
       menu.classList.remove('visible');
+      console.log('Menu closed');
     });
   }
 
   if (declarationBtn) {
     declarationBtn.addEventListener('click', function() {
       alert('Accessibility Declaration');
+      console.log('Accessibility Declaration shown');
     });
   }
 
@@ -32,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     muteSoundsBtn.addEventListener('click', function() {
       document.querySelectorAll('audio, video').forEach(media => {
         media.muted = true;
+        console.log('Media muted');
       });
     });
   }
@@ -41,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     hideImagesBtn.addEventListener('click', function() {
       document.querySelectorAll('img').forEach(img => {
         img.style.display = 'none';
+        console.log('Images hidden');
       });
     });
   }
@@ -50,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     readModeBtn.addEventListener('click', function() {
       document.body.style.backgroundColor = '#f4f4f4';
       document.body.style.color = '#000';
+      console.log('Read mode activated');
     });
   }
 
@@ -62,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         transition: none !important;
       }`;
       document.head.appendChild(style);
+      console.log('Animations stopped');
     });
   }
 
@@ -69,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (readingMaskBtn) {
     readingMaskBtn.addEventListener('click', function() {
       alert('Reading mask activated');
+      console.log('Reading mask activated');
     });
   }
 
@@ -80,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         background-color: yellow !important;
       }`;
       document.head.appendChild(style);
+      console.log('Highlight hover activated');
     });
   }
 
@@ -91,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         outline: 3px solid yellow !important;
       }`;
       document.head.appendChild(style);
+      console.log('Highlight focus activated');
     });
   }
 
@@ -98,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (bigBlackCursorBtn) {
     bigBlackCursorBtn.addEventListener('click', function() {
       document.body.style.cursor = 'url(bigblackcursor.png), auto';
+      console.log('Big black cursor activated');
     });
   }
 
@@ -105,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (bigWhiteCursorBtn) {
     bigWhiteCursorBtn.addEventListener('click', function() {
       document.body.style.cursor = 'url(bigwhitecursor.png), auto';
+      console.log('Big white cursor activated');
     });
   }
 
@@ -113,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     darkContrastBtn.addEventListener('click', function() {
       document.body.style.backgroundColor = '#000';
       document.body.style.color = '#fff';
+      console.log('Dark contrast activated');
     });
   }
 
@@ -121,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     lightContrastBtn.addEventListener('click', function() {
       document.body.style.backgroundColor = '#fff';
       document.body.style.color = '#000';
+      console.log('Light contrast activated');
     });
   }
 
@@ -129,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     highContrastBtn.addEventListener('click', function() {
       document.body.style.backgroundColor = '#000';
       document.body.style.color = '#ffff00';
+      console.log('High contrast activated');
     });
   }
 
@@ -136,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (highSaturationBtn) {
     highSaturationBtn.addEventListener('click', function() {
       document.body.style.filter = 'saturate(2)';
+      console.log('High saturation activated');
     });
   }
 
@@ -143,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (monochromeBtn) {
     monochromeBtn.addEventListener('click', function() {
       document.body.style.filter = 'grayscale(100%)';
+      console.log('Monochrome activated');
     });
   }
 
@@ -150,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (lowSaturationBtn) {
     lowSaturationBtn.addEventListener('click', function() {
       document.body.style.filter = 'saturate(0.5)';
+      console.log('Low saturation activated');
     });
   }
 
@@ -161,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll(target).forEach(element => {
           element.style[property] = color;
         });
+        console.log(`Color ${color} applied to ${target}`);
       });
       container.appendChild(button);
     });
@@ -175,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contentScalingBtn) {
     contentScalingBtn.addEventListener('click', function() {
       document.body.style.transform = 'scale(1.2)';
+      console.log('Content scaling activated');
     });
   }
 
@@ -182,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (readableFontBtn) {
     readableFontBtn.addEventListener('click', function() {
       document.body.style.fontFamily = 'Arial, sans-serif';
+      console.log('Readable font activated');
     });
   }
 
@@ -190,6 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightTitlesBtn.addEventListener('click', function() {
       document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(title => {
         title.style.backgroundColor = 'yellow';
+        console.log('Titles highlighted');
       });
     });
   }
@@ -199,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightLinksBtn.addEventListener('click', function() {
       document.querySelectorAll('a').forEach(link => {
         link.style.backgroundColor = 'yellow';
+        console.log('Links highlighted');
       });
     });
   }
@@ -207,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (textMagnifierBtn) {
     textMagnifierBtn.addEventListener('click', function() {
       document.body.style.zoom = '150%';
+      console.log('Text magnifier activated');
     });
   }
 
@@ -214,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (adjustFontSizingBtn) {
     adjustFontSizingBtn.addEventListener('click', function() {
       document.body.style.fontSize = 'larger';
+      console.log('Font sizing adjusted');
     });
   }
 
@@ -221,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (alignCenterBtn) {
     alignCenterBtn.addEventListener('click', function() {
       document.body.style.textAlign = 'center';
+      console.log('Text aligned center');
     });
   }
 
@@ -228,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (adjustLineHeightBtn) {
     adjustLineHeightBtn.addEventListener('click', function() {
       document.body.style.lineHeight = '2';
+      console.log('Line height adjusted');
     });
   }
 
@@ -235,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (alignLeftBtn) {
     alignLeftBtn.addEventListener('click', function() {
       document.body.style.textAlign = 'left';
+      console.log('Text aligned left');
     });
   }
 
@@ -242,6 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (adjustLetterSpacingBtn) {
     adjustLetterSpacingBtn.addEventListener('click', function() {
       document.body.style.letterSpacing = '2px';
+      console.log('Letter spacing adjusted');
     });
   }
 
@@ -249,6 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (alignRightBtn) {
     alignRightBtn.addEventListener('click', function() {
       document.body.style.textAlign = 'right';
+      console.log('Text aligned right');
     });
   }
 
