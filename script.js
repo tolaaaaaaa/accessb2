@@ -1,3 +1,4 @@
+console.log("Accessbility Script is running");
 document.addEventListener('DOMContentLoaded', function() {
   const widget = document.getElementById('accessibility-widget');
   const menu = document.getElementById('accessibility-menu');
